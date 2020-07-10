@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+  <script type="text/javascript">
+
+  </script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  };
+    /* Make the image fully responsive */
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+ 
+    div.transbox {
+      margin: 30px;
+      background-color: white;
+      border: 1px solid white;
+      opacity: 0.6;
+      border-radius: 20px;
+      height: 300px;
+    }
+
+
+    div.transboxtitle {
+      margin-top: 30px;
+      margin-left:5px;
+      background-color: white;
+      border: 1px solid white;
+      opacity: 0.6;
+      border-radius: 20px;
+      height: 300px;
+    }
+
+   div.transbox p {
+     margin: 2%;
+     color:white;
+    }
+
+.state-td{
+	background: grey; 
+	border: 2px solid black; 
+	text-align: center; 
+}
+
+.TEN{background:#6e1423ff;color:black;}
+.NINE{background:#a11d33ff;color:black;}
+.EIGHT{background:#b21e35ff;color:black;}
+.SEVEN{background:#c71f37ff;color:black;}
+.SIX{background:#e01e37ff;color:black;}
+.FIVE{background:#ef6351ff;color:black;}
+.FOUR{background:#f38375ff;color:black;}
+.THREE{background:#f7a399ff;color:black;}
+.TWO{background:#fbc3bcff;color:black;}
+.ONE{background:#ffe3e0ff;color:black;}
+ 
+</style>
+  
+</head>
+<body style="background-color: whitesmoke;background-image: url('./resources/back4.jpg');">
+<div class="container-fluid">
+  <div class = "row" style="background-color: black;">
+    <div class="col-6 col-sm-4" style="background-color: black;color:white;font-size: xx-large;">
+       <p style="padding-top: 10px; padding-left: 50px;">Pollution in US 2000-2016</p>
+    </div>
+    <div class="col-6 col-sm-8" style="background-color: black;color:white;font-size: xx-large;padding: 10px;">
+        <a href="index.html"><img src="./resources/home0.ico" alt="Home" style="height: 40px;"></a>
+        <a href="#demo1" class="btn btn-dark" data-toggle="collapse">Trends</a>
+        <a href="#demo2" class="btn btn-dark" data-toggle="collapse">Animations</a>
+        <a href="#demo3" class="btn btn-dark" data-toggle="collapse">HeatMaps</a>
+        <a href="info.html"><img src="./resources/info.ico" alt="Home" style="height: 40px;"></a>
+        <div id="demo1" class="collapse" style="font-size: large;">
+            These graphics show the trends of the pollutants 
+            <ul>
+                <li><a href="trends1.html" style="color:white;">Pollutants per State</a></li>
+                <li><a href="trends2.html" style="color:white;">Pollutants per Year</a></li>
+            </ul>
+         </div>
+         <div id="demo2" class="collapse" style="font-size: large;" > 
+            Trends of Pollutants by State
+            <ul>
+                <li><a href="animation1.html" style="color:white;">Trends by State</a></li>
+            </ul>
+          </div>
+        <div id="demo3" class="collapse" style="font-size: large;">
+          Heat Map of US by type of pollutant
+          <ul>
+            <li><a href="Map01.html" style="color:white;">Trends by State</a></li>
+          </ul>
+     
+        </div>
+         
+    </div>
+  </div>
+</div> 
+
+<div class="container-fluid" style="margin-top:30px;color:white">
+    <div class=row>
+        <div class='col-sm-2'>
+            <div class="transboxtitle">
+                <div style="padding-left: 20px;">
+                    <br>
+                    <p style='color:black;'>Year :</p>
+                    <select id="year" name="year" style="background:rgb(0, 0, 0);color: white;padding: 5px;">
+                        <option value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015" selected>2015</option>
+                        <option value="2016">2016</option>
+                    </select>
+                    <br>
+                    <botton style="color:white;background:black;margin-top: 10px;" onclick="update()" class="btn">Update</botton>
+       
+                </div>
+            </div>
+        </div>
+        <div class='col-sm-5 background'>
+            <div class="transbox" id="div01">
+                <br>
+                <h4 style="text-align: center;color:black;">NO2</h4>
+                <table id="st-grid01" style="width:350px; margin:0 auto;height:225px;table-layout:fixed;border-collapse:collapse;">
+                    <tbody style="margin-top: 10px;"></tbody>
+                </table>
+
+            </div>
+
+            <div class="transbox" id="div02">
+
+                <br>
+                <h4 style="text-align: center;color:black;">O3</h4>
+                <table id="st-grid02" style="width:350px; margin:0 auto;height:225px;table-layout:fixed;border-collapse:collapse;">
+                    <tbody style="margin-top: 10px;"></tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class='col-sm-5 background'>
+            <div class="transbox" id="div03">
+                <br>
+                <h4 style="text-align: center;color:black;">SO2</h4>
+                <table id="st-grid03" style="width:350px; margin:0 auto;height:225px;table-layout:fixed;border-collapse:collapse;">
+                    <tbody style="margin-top: 10px;"></tbody>
+                </table>
+
+            </div>
+            <div class="transbox" id="div04">
+                <br>
+                <h4 style="text-align: center;color:black;">CO</h4>
+                <table id="st-grid04" style="width:350px; margin:0 auto;height:225px;table-layout:fixed;border-collapse:collapse;">
+                    <tbody style="margin-top: 10px;"></tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-bottom:0; background-color: black; color:white;">
+    <div class="row">
+        <div class="col" >
+            <div class="row">
+                <div class="col" style="padding: 10px;text-align: right;">
+                    <img src="./resources/Balam1.png" alt="Balam">
+                </div>
+                
+                <div class="col" style="padding: 10px;">
+                    Lilian Sao de Rivera
+                    Summer 2020
+                </div>
+                <div class="col">
+                </div>
+
+            </div>
+        </div>
+        <div class="col" ></div>
+        <div class="col" style="padding: 10px;display: inline;" >
+            <div class="row">
+                <div class="col" style="text-align: right;">
+                    <img src="./resources/gw.png" alt="gw" width="60px" height="60px">
+                </div>
+                <div class="col">
+                    Visualization of Complex Data
+                    Prof. Nima Zahadat
+                </div>            
+        </div>
+      </div>
+    
+</div>
+<script>
+
+    DrawAll();
+    
+    function update(){
+        d3.selectAll("tr").remove();
+        DrawAll();
+    };
+    
+    function DrawAll(){
+
+        
+   
+    
+        DrawMap('NO2', '#st-grid01');
+        DrawMap('O3', '#st-grid02');
+        DrawMap('SO2', '#st-grid03');
+        DrawMap('CO', '#st-grid04');
+    };
+    
+    function DrawMap(xpollutant = 'NO2', xid) {
+
+        var stateLoc =[
+         ["AK",    ,    ,    ,    ,    ,    ,    ,    ,    ,"ME"]
+        ,[    ,    ,    ,    ,    ,    ,    ,    ,    ,"VT","NH"]
+        ,["WA","ID","MT","ND","MN",    ,"MI",    ,"NY","MA","RI"]
+        ,["OR","UT","WY","SD","IA","WI","IN","OH","PA","NJ","CT"]
+        ,["CA","NV","CO","NE","MO","IL","KY","WV","VA","MD","DE"]
+        ,[    ,"AZ","NM","KS","AR","TN","NC","SC","DC",    ,    ]
+        ,[    ,    ,    ,"OK","LA","MS","AL","GA",    ,    ,    ]
+        ,["HI",    ,    ,"TX",    ,    ,    ,    ,"FL",    ,    ]   
+        ];
+
+     //Create SVG element and append map to the SVG
+    
+        var USclasses = ['ONE','TWO','THREE','FOUR','FIVE','SIX','SEVEN','EIGHT','NINE','TEN']
+        var statecolor = {}; // create an empty array
+        var xyear = document.getElementById('year').value;
+
+        var xfile = ''
+        switch (xpollutant){
+            case 'NO2':
+                xfile = "./data/no2_v2.csv"
+                break;
+            case 'SO2':
+                xfile = "./data/so2.csv"
+                break;
+            case 'CO':
+                xfile = "./data/co.csv"
+                break;
+            case 'O3':
+                xfile = "./data/o3.csv"
+                break;
+                
+        }
+        d3.csv(xfile, function(data) {
+
+        data = data.filter(function(d){ return (d.year == xyear); });
+
+        data.forEach(function(d) {
+            d.class = USclasses[d.bin-1];
+            d.State_abbr = d.State_abbr;
+
+            statecolor[d.State_abbr]=d.class;
+
+        });
+
+        d3.select(xid)
+            .select("tbody")
+            .selectAll("tr")
+            .data(stateLoc)
+        .enter()
+        .append("tr")
+        .selectAll("td")
+        .data(function(d){ return d;}).enter().append("td")
+        .attr("class",function(d){ return d==undefined? "blank-td" : "state-td " +statecolor[d];})
+        .attr("id", function(d){ return d} )
+        .text(function(d){ return d});
+ 
+       });
+
+
+    };
+
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;   
+    }
+
+    function transitionHeaderColors() {
+         d3.selectAll("h1")
+        .transition()
+        .duration(3000)
+        .style("background-color", function() {
+        var r = getRandomInt(0, 150),
+            g = getRandomInt(0, 150),
+            b = getRandomInt(0, 150);
+            return "rgb(" + [r, g, b].join(",") + ")";
+        });
+
+        window.setTimeout(transitionHeaderColors, 3000);    
+    }
+
+    //transitionHeaderColors();
+
+
+</script>
+    
+
+</body>
+</html>

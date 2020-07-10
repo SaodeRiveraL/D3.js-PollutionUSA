@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <script type="text/javascript">
+
+  </script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  };
+    /* Make the image fully responsive */
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+ 
+    div.transbox {
+      margin: 30px;
+      background-color: white;
+      border: 1px solid white;
+      opacity: 0.6;
+      border-radius: 20px;
+      height: 350px;
+    }
+
+
+    div.transboxtitle {
+      margin-top: 30px;
+      margin-left:5px;
+      background-color: white;
+      border: 1px solid white;
+      opacity: 0.6;
+      border-radius: 20px;
+      height: 300px;
+    }
+
+   div.transbox p {
+     margin: 2%;
+     color:white;
+    }
+
+.line {
+    fill: none;
+    stroke: #cb181d;
+    stroke-width: 3;
+}
+
+ 
+</style>
+  
+</head>
+<body style="background-color: whitesmoke;background-image: url('./resources/back4.jpg');">
+<div class="container-fluid">
+  <div class = "row" style="background-color: black;">
+    <div class="col-6 col-sm-4" style="background-color: black;color:white;font-size: xx-large;">
+       <p style="padding-top: 10px; padding-left: 50px;">Pollution in US 2000-2016</p>
+    </div>
+    <div class="col-6 col-sm-8" style="background-color: black;color:white;font-size: xx-large;padding: 10px;">
+        <a href="index.html"><img src="./resources/home0.ico" alt="Home" style="height: 40px;"></a>
+        <a href="#demo1" class="btn btn-dark" data-toggle="collapse">Trends</a>
+        <a href="#demo2" class="btn btn-dark" data-toggle="collapse">Animations</a>
+        <a href="#demo3" class="btn btn-dark" data-toggle="collapse">HeatMaps</a>
+        <a href="info.html"><img src="./resources/info.ico" alt="Home" style="height: 40px;"></a>
+        <div id="demo1" class="collapse" style="font-size: large;">
+            These graphics show the trends of the pollutants 
+            <ul>
+                <li><a href="trends1.html" style="color:white;">Pollutants per State</a></li>
+                <li><a href="trends2.html" style="color:white;">Pollutants per Year</a></li>
+            </ul>
+         </div>
+         <div id="demo2" class="collapse" style="font-size: large;" > 
+            Trends of Pollutants by State
+            <ul>
+                <li><a href="animation1.html" style="color:white;">Trends by State</a></li>
+            </ul>
+          </div>
+        <div id="demo3" class="collapse" style="font-size: large;">
+          Heat Map of US by type of pollutant
+          <ul>
+            <li><a href="Map01.html" style="color:white;">Trends by State</a></li>
+          </ul>
+     
+        </div>
+         
+    </div>
+  </div>
+</div> 
+
+<div class="container-fluid" style="margin-top:30px;color:white">
+    <div class=row>
+        <div class='col-sm-2'>
+            <div class="transboxtitle">
+                <br>
+                <h4 style="color:black;padding:10px;">
+                    Choose State :
+                </h4>
+                <div style="padding-left: 20px; padding-top: 10px;">
+                <select id="State" name="State" style="background:rgb(0, 0, 0);color: white;padding: 5px;">
+                    <option value = 'Alabama'>Alabama</option>
+                    <option value = 'Alaska'>Alaska</option>
+                    <option value = 'American Samoa'>American Samoa</option>
+                    <option value = 'Arizona' selected>Arizona</option>
+                    <option value = 'Arkansas'>Arkansas</option>
+                    <option value = 'California'>California</option>
+                    <option value = 'Colorado'>Colorado</option>
+                    <option value = 'Connecticut'>Connecticut</option>
+                    <option value = 'Delaware'>Delaware</option>
+                    <option value = 'District of Columbia'>District of Columbia</option>
+                    <option value = 'Florida'>Florida</option>
+                    <option value = 'Georgia'>Georgia</option>
+                    <option value = 'Hawaii'>Hawaii</option>
+                    <option value = 'Idaho'>Idaho</option>
+                    <option value = 'Illinois'>Illinois</option>
+                    <option value = 'Indiana'>Indiana</option>
+                    <option value = 'Iowa'>Iowa</option>
+                    <option value = 'Kansas'>Kansas</option>
+                    <option value = 'Kentucky'>Kentucky</option>
+                    <option value = 'Louisiana'>Louisiana</option>
+                    <option value = 'Maine'>Maine</option>
+                    <option value = 'Maryland'>Maryland</option>
+                    <option value = 'Massachusetts'>Massachusetts</option>
+                    <option value = 'Michigan'>Michigan</option>
+                    <option value = 'Minnesota'>Minnesota</option>
+                    <option value = 'Mississippi'>Mississippi</option>
+                    <option value = 'Missouri'>Missouri</option>
+                    <option value = 'Montana'>Montana</option>
+                    <option value = 'Nevada'>Nevada</option>
+                    <option value = 'New Hampshire'>New Hampshire</option>
+                    <option value = 'New Jersey'>New Jersey</option>
+                    <option value = 'New Mexico'>New Mexico</option>
+                    <option value = 'New York'>New York</option>
+                    <option value = 'North Carolina'>North Carolina</option>
+                    <option value = 'North Dakota'>North Dakota</option>
+                    <option value = 'Ohio'>Ohio</option>
+                    <option value = 'Oklahoma'>Oklahoma</option>
+                    <option value = 'Oregon'>Oregon</option>
+                    <option value = 'Pennsylvania'>Pennsylvania</option>
+                    <option value = 'Puerto Rico'>Puerto Rico</option>
+                    <option value = 'Rhode Island'>Rhode Island</option>
+                    <option value = 'South Carolina'>South Carolina</option>
+                    <option value = 'South Dakota'>South Dakota</option>
+                    <option value = 'Tennessee'>Tennessee</option>
+                    <option value = 'Texas'>Texas</option>
+                    <option value = 'Utah'>Utah</option>
+                    <option value = 'Vermont'>Vermont</option>
+                    <option value = 'Virgin Islands'>Virgin Islands</option>
+                    <option value = 'Virginia'>Virginia</option>
+                    <option value = 'Washington'>Washington</option>
+                    <option value = 'West Virginia'>West Virginia</option>
+                    <option value = 'Wisconsin'>Wisconsin</option>
+                    <option value = 'Wyoming'>Wyoming</option>
+                  </select>
+                  <br>
+                  <botton style="color:white;background:black;margin-top: 10px;" onclick="update()" class="btn">Select</botton>
+                </div>
+
+            </div>
+
+        </div>
+        <div class='col-sm-4 background'>
+            <div class="transbox" id="div01">
+            </div>
+
+            <div class="transbox" id="div02">
+            </div>
+
+        </div>
+        <div class='col-sm-4 background'>
+            <div class="transbox" id="div03">
+            </div>
+            <div class="transbox" id="div04">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" style="margin-bottom:0; background-color: black; color:white;">
+    <div class="row">
+        <div class="col" >
+            <div class="row">
+                <div class="col" style="padding: 10px;text-align: right;">
+                    <img src="./resources/Balam1.png" alt="Balam">
+                </div>
+                
+                <div class="col" style="padding: 10px;">
+                    Lilian Sao de Rivera
+                    Summer 2020
+                </div>
+                <div class="col">
+                </div>
+
+            </div>
+        </div>
+        <div class="col" ></div>
+        <div class="col" style="padding: 10px;display: inline;" >
+            <div class="row">
+                <div class="col" style="text-align: right;">
+                    <img src="./resources/gw.png" alt="gw" width="60px" height="60px">
+                </div>
+                <div class="col">
+                    Visualization of Complex Data
+                    Prof. Nima Zahadat
+                </div>            
+        </div>
+      </div>
+    
+</div>
+<script>
+
+    DrawAll();
+    
+    function update(){
+        d3.select("#svg01").remove();
+        d3.select("#svg02").remove();
+        d3.select("#svg03").remove();
+        d3.select("#svg04").remove();
+        DrawAll();
+    };
+    
+    function DrawAll(){
+    
+     //Create SVG element and append map to the SVG
+    
+        var width = 500;
+        var height = 400;
+
+    
+        var svg = d3.select("#div01")
+                .append("svg")
+                .attr("id", "svg01")
+                .attr("width", width)
+                .attr("height", height);
+    
+        svg = d3.select("#div02")
+                .append("svg")
+                .attr("id", "svg02")
+                .attr("width", width)
+                .attr("height", height);
+    
+        svg = d3.select("#div03")
+                .append("svg")
+                .attr("id", "svg03")
+                .attr("width", width)
+                .attr("height", height);
+    
+        svg = d3.select("#div04")
+                .append("svg")
+                .attr("id", "svg04")
+                .attr("width", width)
+                .attr("height", height);
+    
+    
+        DrawLine('NO2', '#svg01', 'Line01');
+        DrawLine('O3', '#svg02', 'Line02');
+        DrawLine('CO', '#svg03', 'Line03');
+        DrawLine('SO2', '#svg04', 'Line04');
+    };
+    
+    function DrawLine(xpollutant = 'NO2', xid, xid_line) {
+    
+    
+        var xstate = document.getElementById('State').value
+        var xtitle = xpollutant+" " +xstate
+
+        var svg = d3.select(xid),
+            margin = 200,
+            width = svg.attr("width") - margin,
+            height = svg.attr("height") - margin
+    
+        svg.append("text")
+           .attr("transform", "translate(100,0)")
+           .attr("x", 10)
+           .attr("y", 50)
+           .attr("font-size", "24px")
+           .text(xtitle  )
+    
+        var xScale = d3.scaleBand().range([0, width]).padding(0.4),
+            yScale = d3.scaleLinear().range([height,0]);
+
+        var g = svg.append("g")
+               .attr("transform", "translate(" + 80 + "," + 100 + ")");
+
+
+
+        d3.csv("./data/byState.csv", function(error, data) {
+            if (error) {
+                throw error;
+            }
+    
+    
+            data = data.filter(function(d){ return (d.State == xstate); });
+
+            xScale.domain(data.map(function(d) { return d.year; }));
+
+            switch (xpollutant){
+                case 'NO2':
+                    yScale.domain([0, d3.max(data, function(d) { return d.NO2; })]);
+                    break;
+                case 'O3':
+                    yScale.domain([0, d3.max(data, function(d) { return d.O3; })]);
+                    break;
+                case 'CO':
+                    yScale.domain([0, d3.max(data, function(d) { return d.CO; })]);
+                    break;
+                case 'SO2':
+                    yScale.domain([0, d3.max(data, function(d) { return d.SO2; })]);
+                    break;
+            }
+        
+            g.append("g")
+                .attr("class", "axis")
+                .attr("transform", "translate(0," + height  + ")")
+                .call(d3.axisBottom(xScale))
+                .selectAll("text")	
+                .style("text-anchor", "end")
+                .attr("dx", "-.8em")
+                .attr("dy", ".15em")
+                .attr("transform", "rotate(-65)");
+    
+    
+            g.append("g")
+             .call(d3.axisLeft(yScale).tickFormat(function(d){
+                 return  d;
+             })
+             .ticks(10))
+             .append("text")
+             .attr("transform", "rotate(-90)")
+             .attr("y", 1)
+             .attr("dy", "-5.1em")
+             .attr("text-anchor", "end")
+             .attr("stroke", "black")
+             .text("Units per Million");
+
+
+            var line = d3.line() 
+				.x(function(d) { return xScale(d.year)+100; }) 
+                .y(function(d) { 
+                    if (xpollutant == 'NO2') {
+                       return yScale(d.NO2)+100;
+                    };
+                    if (xpollutant == 'CO') {
+                       return yScale(d.CO)+100;
+                    };
+                    if (xpollutant == 'SO2') {
+                       return yScale(d.SO2)+100;
+                    };
+                    if (xpollutant == 'O3') {
+                       return yScale(d.O3)+100;
+                    };
+                })
+                .curve(d3.curveMonotoneX) ;                
+
+            // Add the valueline path.
+            svg.append("path")
+            .data([data])
+            .attr("class", "line")
+            .attr("id", xid_line)
+            .attr("d", line);
+
+            xid_line = '#'+xid_line
+        
+            		//Initially set the lines to not show	
+	    	
+              // First set all the lines to be invisible
+            d3.selectAll(xid_line).style("opacity","0");
+  
+            // Then highlight the main line to be fully visable and give it a thicker stroke
+            d3.select(xid_line).style("opacity","1").style("stroke-width",4);
+
+            // First work our the total length of the line 
+            var totalLength = d3.select(xid_line).node().getTotalLength();
+
+            d3.selectAll(xid_line)
+             // Set the line pattern to be an long line followed by an equally long gap
+            .attr("stroke-dasharray", totalLength + " " + totalLength)
+            // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+             .attr("stroke-dashoffset", totalLength)
+            // Then the following lines transition the line so that the gap is hidden...
+            .transition()
+            .duration(5000)
+            .attr("stroke-dashoffset", 0);
+
+
+            
+        });
+    
+
+    
+    }
+    
+</script>
+    
+
+</body>
+</html>

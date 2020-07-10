@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+  </script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  };
+    /* Make the image fully responsive */
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+ 
+    div.transbox {
+      margin: 30px;
+      background-color: black;
+      border: 1px solid white;
+      opacity: 0.4;
+      border-radius: 20px;
+      height: 420px;
+    }
+
+   div.transbox p {
+     margin: 5%;
+     color:white;
+    }
+
+   </style>
+  
+</head>
+<body style="background-color: whitesmoke;background-image: url('./resources/back4.jpg');">
+<div class="container-fluid">
+  <div class = "row" style="background-color: black;">
+    <div class="col-6 col-sm-4" style="background-color: black;color:white;font-size: xx-large;">
+       <p style="padding-top: 10px; padding-left: 50px;">Pollution in US 2000-2016</p>
+    </div>
+    <div class="col-6 col-sm-8" style="background-color: black;color:white;font-size: xx-large;padding: 10px;">
+        <a href="index.html"><img src="./resources/home0.ico" alt="Home" style="height: 40px;"></a>
+        <a href="#demo1" class="btn btn-dark" data-toggle="collapse">Trends</a>
+        <a href="#demo2" class="btn btn-dark" data-toggle="collapse">Animations</a>
+        <a href="#demo3" class="btn btn-dark" data-toggle="collapse">HeatMaps</a>
+        <a href="info.html"><img src="./resources/info.ico" alt="Home" style="height: 40px;"></a>
+        <div id="demo1" class="collapse" style="font-size: large;">
+            These graphics show the trends of the pollutants 
+            <ul>
+                <li><a href="trends1.html" style="color:white;">Pollutants per State</a></li>
+                <li><a href="trends2.html" style="color:white;">Pollutants per Year</a></li>
+            </ul>
+         </div>
+         <div id="demo2" class="collapse" style="font-size: large;" > 
+            Trends of Pollutants by State
+            <ul>
+                <li><a href="animation1.html" style="color:white;">Trends by State</a></li>
+            </ul>
+          </div>
+        <div id="demo3" class="collapse" style="font-size: large;">
+          Heat Map of US by type of pollutant
+          <ul>
+            <li><a href="Map01.html" style="color:white;">Trends by State</a></li>
+          </ul>
+     
+        </div>
+        
+         
+    </div>
+  </div>
+</div> 
+
+<div class="container-fluid" style="margin-top:30px;color:white">
+    <div class=row>
+        <div class='col-sm-1'>
+        </div>
+        <div class='col-sm-5 background'>
+            <div class="transbox">
+               <p style="font-size: larger;font-weight: bold;">Datasets</p>
+               <p style ="text-align: center;">
+                   The dataset is from the Kaggle Database. There are four pollutants in the dataset :NO2, CO, SO2 and O3.  
+                   Each one has 5 specific columns. 
+                   Observations totaled to over 1.4 million. 
+                   The years included in the data are from the year 2000 to 2016. However, the year 2016 is not complete.
+               </p>
+            </div>
+        </div>
+        <div class='col-sm-5 background'>
+            <div class="transbox">
+                <p style="font-size: larger;font-weight: bold;">References</p>
+                <p>
+                   The project was done thanks to several helps found in internet. Here are listed the links to the resources that were used to implement this site.
+                </p>
+                <ul>
+                    <li><a href="https://www.kaggle.com/sogun3/uspollution" style="color:white;">Kaggle Site Dataset</a></li>
+                    <li><a href="https://www.environment.gov.au" style="color:white;">Definition about pollution, Australian Goverment</a></li>
+                    <li><a href="http://bl.ocks.org/michellechandra/0b2ce4923dc9b5809922" style="color:white;">Resources from bl.ocks.org</a></li>
+                    <li><a href="https://unsplash.com/s/photos/smoke" style="color:white;">Pictures from unsplash.com by Janes Jhonson,  Eberhard Brossgasteiger , and Chuttersnap  </a></li>
+
+                </ul>
+    
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container-fluid" style="margin-bottom:0; background-color: black; color:white;">
+    <div class="row">
+        <div class="col" >
+            <div class="row">
+                <div class="col" style="padding: 10px;text-align: right;">
+                    <img src="./resources/Balam1.png" alt="Balam">
+                </div>
+                
+                <div class="col" style="padding: 10px;">
+                    Lilian Sao de Rivera
+                    Summer 2020
+                </div>
+                <div class="col">
+                </div>
+
+            </div>
+        </div>
+        <div class="col" ></div>
+        <div class="col" style="padding: 10px;display: inline;" >
+            <div class="row">
+                <div class="col" style="text-align: right;">
+                    <img src="./resources/gw.png" alt="gw" width="60px" height="60px">
+                </div>
+                <div class="col">
+                    Visualization of Complex Data
+                    Prof. Nima Zahadat
+                </div>            
+        </div>
+      </div>
+    
+</div>
+
+</body>
+</html>
